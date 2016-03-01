@@ -1,0 +1,40 @@
+<?php
+namespace Drupal\demo;
+
+use Drupal\Core\Database\Database;
+
+function demo_install()
+{
+    $spec = array(
+        'description' => 'Kensium Contact Form',
+        'fields' => array(
+            'id' => array(
+                'type' => 'serial',
+                'not null' => TRUE,
+            ),
+            'title' => array(
+                'type' => 'varchar',
+                'length' => 40,
+                'not null' => TRUE,
+            ),
+            'video' => array(
+                'type' => 'varchar',
+                'length' => 250,
+                'not null' => FALSE,
+            ),
+            'develop' => array(
+                'type' => 'int',
+                'length' => 2,
+                'not null' => FALSE,
+            ),
+            'description' => array(
+                'type' => 'long',
+                'length' => 1500,
+                'not null' => FALSE,
+            ),
+        ),
+        'primary key' => array('id'),
+    );
+    $schema = Database::getConnection()->schema();
+    $schema->createTable('kensium_contact', $spec);
+}

@@ -1,0 +1,12 @@
+kensium-theme:
+  css:
+    theme:
+      css/bootstrap.min.css: {}
+      css/modern-business.css: {}
+      font-awesome/css/font-awesome.min.css: {}
+      css/style.css: {}
+  js:
+    js/bootstrap.min.js: {}
+    js/script.js: {}
+  dependencies:
+    - core/jquery
